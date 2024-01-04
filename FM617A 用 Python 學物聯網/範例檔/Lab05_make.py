@@ -20,7 +20,7 @@ while True:
     if shock.value() == 1:
         print("感應到振動!")
         
-        # 連線 IFTTT 服務發送簡訊通知
+        # 連線 MAKE 服務發送簡訊通知
         urequests.get("MAKE請求網址")    
         
         # 暫停 60 秒, 避免短時間內一直收到重複的警報
