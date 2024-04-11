@@ -16,6 +16,9 @@ print("Wifi已連上")
 rfid = mfrc522.MFRC522(0, 2, 4, 5, 14)
 led = Pin(15, Pin.OUT)
 
+make_url = "MAKE 請求網址"
+replit_url = '你的 replit 專案網站網址'
+
 while True:
 
     led.value(0)  # 搜尋卡片之前先關閉 LED
@@ -31,8 +34,8 @@ while True:
             print("偵測到卡號：", id)
             
             # 連線 MAKE 服務以便將卡號傳送到 Google 試算表
-#             make_url = "MAKE 請求網址"
-            make_url = "MAKE 請求網址"
-            urequests.get(make_url + "?value=" + id)
+            urequests.get(replit_url
+                             + '?url=' + make_url
+                             +'&value=' + id)
             
             time.sleep(0.5)  # 暫停一下, 避免 LED 太快熄滅看不到
