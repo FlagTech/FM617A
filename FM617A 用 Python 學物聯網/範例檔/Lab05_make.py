@@ -16,12 +16,16 @@ print("Wifi已連上")
 # 建立 16 號腳位的 Pin 物件, 設定為輸入腳位, 並命名為 shock
 shock = Pin(16, Pin.IN)
 
+make_url = '你的 make.com web hook 網址'
+replit_url = '你的 replit 專案網站網址'
+
 while True:
     if shock.value() == 1:
         print("感應到振動!")
         
         # 連線 MAKE 服務發送簡訊通知
-        urequests.get("MAKE請求網址")    
+        urequests.get(replit_url
+                      + '?url=' + make_url)  
         
         # 暫停 60 秒, 避免短時間內一直收到重複的警報
         time.sleep(60)
